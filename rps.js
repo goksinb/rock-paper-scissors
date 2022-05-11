@@ -1,6 +1,7 @@
 
 // User chooses their move
-let userInput = prompt ("Choose your move")
+
+let userInput = prompt ("Choose your move").toLowerCase()
 
 console.log (userInput)
 
@@ -23,23 +24,23 @@ const computerSelection = computerPlay();
 
 function playRound (computerSelection, userInput) {
 
-    if (userInput === "Rock" && computerSelection === "Scissors") {return "You win!";}
-    else if (userInput === "Rock" && computerSelection === "Paper") {return "You lose!";}
-    else if (userInput === "Rock" && computerSelection === "Rock") {return "It's a tie!";}
+    if (userInput === "rock" && computerSelection === "Scissors") {return "You win!";}
+    else if (userInput === "rock" && computerSelection === "Paper") {return "You lose!";}
+    else if (userInput === "rock" && computerSelection === "Rock") {return "It's a tie!";}
 
-    else if (userInput === "Paper" && computerSelection === "Rock") {return "You win!";}
-    else if (userInput === "Paper" && computerSelection === "Paper") {return "It's a tie!";}
-    else if (userInput === "Paper" && computerSelection === "Scissors") {return "You lose!";}
+    else if (userInput === "paper" && computerSelection === "Rock") {return "You win!";}
+    else if (userInput === "paper" && computerSelection === "Paper") {return "It's a tie!";}
+    else if (userInput === "paper" && computerSelection === "Scissors") {return "You lose!";}
 
-    else if (userInput === "Scissors" && computerSelection === "Rock") {return "You lose!";}
-    else if (userInput === "Scissors" && computerSelection === "Paper") {return "You win!";}
-    else if (userInput === "Scissors" && computerSelection === "Scissors") {return "It's a tie!";}
+    else if (userInput === "scissors" && computerSelection === "Rock") {return "You lose!";}
+    else if (userInput === "scissors" && computerSelection === "Paper") {return "You win!";}
+    else if (userInput === "scissors" && computerSelection === "Scissors") {return "It's a tie!";}
 
 }
 
 console.log(computerSelection)
 
-console.log(playRound(computerSelection, userInput));
+console.log(playRound(computerSelection, userInput))
 
 
 /*
