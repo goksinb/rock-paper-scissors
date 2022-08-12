@@ -1,7 +1,7 @@
 
-let computerScore = 0;
-let draws = 0;
-let playerScore = 0;
+let computerScore = 1;
+let draws = 1;
+let playerScore = 1;
 
 
 
@@ -19,10 +19,10 @@ function computerPlay() {
  
 
 //Specifies round win/game win messages
-let playerWinRound = "You win!"
+let playerWinRound = "Player wins!"
 let computerWinRound = "Computer wins!"
 let draw = "It's a tie!"
-let playerWin = "You win the game!"
+let playerWin = "Player wins the game!"
 let computerWin = "Computer wins the game!"
 
 const computerSelection = computerPlay();
@@ -48,34 +48,16 @@ function playRound (computerSelection, userInput) {
 
 }
 
-console.log (playRound())
-
-
-for(var i=0;i<5;i++){
-  let userInput = prompt("Pick a move");
-  const computerSelection = computerPlay()
-  console.log ("Player's move: " + userInput)
-  console.log("Computer's move: " + computerSelection)
-  let roundResult = playRound(userInput, computerSelection);
-  console.log(roundResult);
-  gameScore(roundResult);
-  console.log("Player's score = " + playerScore);
-  console.log("Computer's score = " + computerScore);
-  console.log(playRound(computerSelection, userInput))
-
-}
-
 function gameScore(result) {
 
   
   if (result === playerWinRound) {
     playerScore++;
   } else if (result === draw) {
-    draws++;
+    draws++; 
   } else {
     computerScore++;
   }
-
 
   if (playerScore === 5) {
     console.log(playerWin);
@@ -85,6 +67,23 @@ function gameScore(result) {
     console.log(computerWin);
     return;
   }
+}
+
+
+
+
+for(var i=0;i<5;i++){
+  let userInput = prompt("Pick a move");
+  const computerSelection = computerPlay()
+  console.log ("Player's move: " + userInput)
+  console.log("Computer's move: " + computerSelection)
+  console.log("Player's score = " + playerScore);
+  console.log("Computer's score = " + computerScore);
+  console.log("Draws: " + draws)
+  let roundResult = playRound (computerSelection, userInput);
+  console.log(roundResult);
+  gameScore(roundResult);
+
 }
 
 
