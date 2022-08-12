@@ -1,9 +1,22 @@
 
+let computerScore = 0;
+let draws = 0;
+let playerScore = 0;
+
+
+function game() {
+ 
+  for (let i = 0; i <= 5; i++) {
+      playRound();
+      
+  }
+
+}
+
 // User chooses their move
 
-let userInput = prompt ("Choose your move").toLowerCase()
+  let userInput = prompt ("Choose your move").toLowerCase()
 
-console.log (userInput)
 
  //Computer's selection
 
@@ -16,33 +29,136 @@ function computerPlay() {
     else {return "Scissors";}
 
 }
+ 
 
+//Specifies round win/game win messages
+let playerWinRound = "You win!"
+let computerWinRound = "Computer wins!"
+let draw = "It's a tie!"
+let playerWin = "You win the game!"
+let computerWin = "Computer wins the game!"
 
 const computerSelection = computerPlay();
 
 
 
+
 function playRound (computerSelection, userInput) {
 
-    if (userInput === "rock" && computerSelection === "Scissors") {return "You win!";}
-    else if (userInput === "rock" && computerSelection === "Paper") {return "You lose!";}
-    else if (userInput === "rock" && computerSelection === "Rock") {return "It's a tie!";}
+  if (userInput === "rock" && computerSelection === "Scissors") {return playerWinRound;}
+  else if (userInput === "rock" && computerSelection === "Paper") {return computerWinRound;}
+  else if (userInput === "rock" && computerSelection === "Rock") {return draw;}
 
-    else if (userInput === "paper" && computerSelection === "Rock") {return "You win!";}
-    else if (userInput === "paper" && computerSelection === "Paper") {return "It's a tie!";}
-    else if (userInput === "paper" && computerSelection === "Scissors") {return "You lose!";}
+  else if (userInput === "paper" && computerSelection === "Rock") {return playerWinRound;}
+  else if (userInput === "paper" && computerSelection === "Paper") {return draw;}
+  else if (userInput === "paper" && computerSelection === "Scissors") {return computerWinRound;}
 
-    else if (userInput === "scissors" && computerSelection === "Rock") {return "You lose!";}
-    else if (userInput === "scissors" && computerSelection === "Paper") {return "You win!";}
-    else if (userInput === "scissors" && computerSelection === "Scissors") {return "It's a tie!";}
+  else if (userInput === "scissors" && computerSelection === "Rock") {return computerWinRound;}
+  else if (userInput === "scissors" && computerSelection === "Paper") {return playerWinRound;}
+  else if (userInput === "scissors" && computerSelection === "Scissors") {return draw;}
 
 }
 
+function gameScore(playerScore, computerScore) {
+
+  let result = playRound()
+  
+  if (result === playerWinRound) {
+    playerScore++;
+
+  } else if (result === draw) {
+    draws++;
+  } else {
+    computerScore++;
+  }
+
+  if (playerScore === 5) {
+    console.log(playerWin);
+    return;
+  }
+  if (computerScore === 5) {
+    console.log(computerWin);
+    return;
+
+  }
+  
+}
+
+
+
+console.log (userInput)
 console.log(computerSelection)
-
 console.log(playRound(computerSelection, userInput))
+console.log(gameScore(playerScore, computerScore))
 
 
+
+
+
+/*
+
+
+for (let i = 0; i < 5; i++) {
+  console.log (userInput)
+  console.log(computerSelection)
+  let roundResult = playRound(userInput, computerSelection);
+  console.log(roundResult);
+  gameScore(roundResult);
+  console.log("Your score is " + playerScore);
+  console.log("The computer's score is " + computerScore);
+
+  if (playerScore === 5 || computerScore === 5) {
+    break;
+  }
+}
+
+function gameScore() {
+  let result = playRound()
+
+  if (result === playerWinRound) {
+    playerScore++;
+  } else if (result === draw) {
+    draws++;
+  } else {
+    computerScore++;
+  }
+
+
+  if (playerScore === 5) {
+    console.log(playerWin);
+    return;
+  }
+  if (computerScore === 5) {
+    console.log(computerWin);
+    return;
+  }
+}
+
+
+
+/*
+    function gameScore(result) {
+  
+      if (result === playerWinRound) {
+        playerScore++;
+      } else if (result === draw) {
+        draws++;
+      } else {
+        computerScore++;
+        return
+      }
+  
+  
+      if (playerScore === 5) {
+        console.log(playerWin);
+        return;
+      }
+      else if (computerScore === 5) {
+        console.log(computerWin);
+        return;
+      }
+    }
+   
 /*
 // Player's selection
 
