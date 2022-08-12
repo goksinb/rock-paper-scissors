@@ -4,19 +4,6 @@ let draws = 0;
 let playerScore = 0;
 
 
-function game() {
- 
-  for (let i = 0; i <= 5; i++) {
-      playRound();
-      
-  }
-
-}
-
-// User chooses their move
-
-  let userInput = prompt ("Choose your move").toLowerCase()
-
 
  //Computer's selection
 
@@ -57,7 +44,10 @@ function playRound (computerSelection, userInput) {
   else if (userInput === "scissors" && computerSelection === "Paper") {return playerWinRound;}
   else if (userInput === "scissors" && computerSelection === "Scissors") {return draw;}
 
+
 }
+
+console.log (playRound())
 
 function gameScore(playerScore, computerScore) {
 
@@ -81,18 +71,21 @@ function gameScore(playerScore, computerScore) {
     return;
 
   }
-  
 }
 
 
 
-console.log (userInput)
-console.log(computerSelection)
-console.log(playRound(computerSelection, userInput))
-console.log(gameScore(playerScore, computerScore))
 
+for(var i=0;i<5;i++){
+  let userInput = prompt("Pick a move");
+  const computerSelection = computerPlay()
+  console.log ("Player's move: " + userInput)
+  console.log("Computer's move: " + computerSelection)
+  console.log("Player's score = " + playerScore);
+  console.log("Computer's score = " + computerScore);
+  console.log(playRound(computerSelection, userInput))
 
-
+}
 
 
 /*
