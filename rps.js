@@ -30,6 +30,7 @@ const computerSelection = computerPlay();
 
 
 
+
 function playRound (computerSelection, userInput) {
 
   if (userInput === "rock" && computerSelection === "Scissors") {return playerWinRound;}
@@ -49,18 +50,32 @@ function playRound (computerSelection, userInput) {
 
 console.log (playRound())
 
-function gameScore(playerScore, computerScore) {
 
-  let result = playRound()
+for(var i=0;i<5;i++){
+  let userInput = prompt("Pick a move");
+  const computerSelection = computerPlay()
+  console.log ("Player's move: " + userInput)
+  console.log("Computer's move: " + computerSelection)
+  let roundResult = playRound(userInput, computerSelection);
+  console.log(roundResult);
+  gameScore(roundResult);
+  console.log("Player's score = " + playerScore);
+  console.log("Computer's score = " + computerScore);
+  console.log(playRound(computerSelection, userInput))
+
+}
+
+function gameScore(result) {
+
   
   if (result === playerWinRound) {
     playerScore++;
-
   } else if (result === draw) {
     draws++;
   } else {
     computerScore++;
   }
+
 
   if (playerScore === 5) {
     console.log(playerWin);
@@ -69,23 +84,12 @@ function gameScore(playerScore, computerScore) {
   if (computerScore === 5) {
     console.log(computerWin);
     return;
-
   }
 }
 
 
 
 
-for(var i=0;i<5;i++){
-  let userInput = prompt("Pick a move");
-  const computerSelection = computerPlay()
-  console.log ("Player's move: " + userInput)
-  console.log("Computer's move: " + computerSelection)
-  console.log("Player's score = " + playerScore);
-  console.log("Computer's score = " + computerScore);
-  console.log(playRound(computerSelection, userInput))
-
-}
 
 
 /*
