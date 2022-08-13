@@ -1,7 +1,7 @@
 
-let computerScore = 1;
-let draws = 1;
-let playerScore = 1;
+let computerScore = 0;
+let draws = 0;
+let playerScore = 0;
 
 
 
@@ -95,12 +95,12 @@ for(var i=0;i<5;i++){
   const computerSelection = computerPlay()
   console.log ("Player's move: " + userInput)
   console.log("Computer's move: " + computerSelection)
-  console.log("Player's score = " + playerScore);
-  console.log("Computer's score = " + computerScore);
-  console.log("Draws: " + draws)
   let roundResult = playRound (computerSelection, userInput);
   console.log(roundResult);
   gameScore(roundResult);
+  console.log("Player's score = " + playerScore);
+  console.log("Computer's score = " + computerScore);
+  console.log("Draws: " + draws)
 
 
 }
