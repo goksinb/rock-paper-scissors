@@ -5,7 +5,7 @@ let playerScore = 0;
 
 
 
- //Computer's selection
+//Computer's selection
 
 function computerPlay() {
 
@@ -19,6 +19,7 @@ function computerPlay() {
  
 
 //Specifies round win/game win messages
+
 let playerWinRound = "Player wins!"
 let computerWinRound = "Computer wins!"
 let draw = "It's a tie!"
@@ -46,6 +47,7 @@ function playRound (computerSelection, userInput) {
 }
 
 //Keeps the score
+
 function gameScore(result) {
 
   if (result === playerWinRound) {
@@ -67,6 +69,7 @@ function gameScore(result) {
 }
 
 //  Specifies the winner of the game
+
 function gameWinner(playerScore, computerScore) {
 
 
