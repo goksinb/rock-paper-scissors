@@ -26,10 +26,6 @@ let playerWin = "Player wins the game!"
 let computerWin = "Computer wins the game!"
 let gameDraw = "It's a draw! No one wins."
 
-const computerSelection = computerPlay();
-
-
-
 
 
 function playRound (computerSelection, userInput) {
@@ -49,9 +45,9 @@ function playRound (computerSelection, userInput) {
 
 }
 
+//Keeps the score
 function gameScore(result) {
 
-  
   if (result === playerWinRound) {
     playerScore++;
   } else if (result === draw) {
@@ -70,6 +66,7 @@ function gameScore(result) {
   }
 }
 
+//  Specifies the winner of the game
 function gameWinner(playerScore, computerScore) {
 
 
@@ -89,6 +86,7 @@ function gameWinner(playerScore, computerScore) {
 
 
 
+// Plays 5 round of RPS
 
 for(var i=0;i<5;i++){
   let userInput = prompt("Pick a move");
@@ -106,106 +104,6 @@ for(var i=0;i<5;i++){
 }
 
   gameWinner(playerScore, computerScore)
-
-
-
-
-/*
-
-
-for (let i = 0; i < 5; i++) {
-  console.log (userInput)
-  console.log(computerSelection)
-  let roundResult = playRound(userInput, computerSelection);
-  console.log(roundResult);
-  gameScore(roundResult);
-  console.log("Your score is " + playerScore);
-  console.log("The computer's score is " + computerScore);
-
-  if (playerScore === 5 || computerScore === 5) {
-    break;
-  }
-}
-
-function gameScore() {
-  let result = playRound()
-
-  if (result === playerWinRound) {
-    playerScore++;
-  } else if (result === draw) {
-    draws++;
-  } else {
-    computerScore++;
-  }
-
-
-  if (playerScore === 5) {
-    console.log(playerWin);
-    return;
-  }
-  if (computerScore === 5) {
-    console.log(computerWin);
-    return;
-  }
-}
-
-
-
-/*
-    function gameScore(result) {
-  
-      if (result === playerWinRound) {
-        playerScore++;
-      } else if (result === draw) {
-        draws++;
-      } else {
-        computerScore++;
-        return
-      }
-  
-  
-      if (playerScore === 5) {
-        console.log(playerWin);
-        return;
-      }
-      else if (computerScore === 5) {
-        console.log(computerWin);
-        return;
-      }
-    }
-   
-/*
-// Player's selection
-
-function playerPlay() {
-
-    let playerSelection = ""; 
-
-    if (playerSelection === "Rock" ) {return "Rock";}
-    else if (playerSelection === "Paper") {return "Paper";}
-    else if (playerSelection === "Scissors") {return "Scissors";}
-
-}
-
-
-const computerSelection = computerPlay()
-
-console.log (computerPlay())
-
-//Round between computer and player
-
-    function playRound (computerPlay, playerPlay) {
-
-        if (playerSelection === "Rock" && computerSelection === "Scissors") {return "You Won!";}
-        else if (playerSelection === "Rock" && computerSelection === "Paper") {return "Computer Won!";}
-        else if (playerSelection === "Rock" && computerSelection === "Rock") {return "It's a tie!";}
-
-    }
-
-    console.log(playRound())
-
-*/
-
 
 
 
