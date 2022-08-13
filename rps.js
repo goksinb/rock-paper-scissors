@@ -24,6 +24,7 @@ let computerWinRound = "Computer wins!"
 let draw = "It's a tie!"
 let playerWin = "Player wins the game!"
 let computerWin = "Computer wins the game!"
+let gameDraw = "It's a draw! No one wins."
 
 const computerSelection = computerPlay();
 
@@ -69,6 +70,23 @@ function gameScore(result) {
   }
 }
 
+function gameWinner(playerScore, computerScore) {
+
+
+  if (playerScore > computerScore) {
+    console.log(playerWin);
+    return;
+  }
+  else if (computerScore > playerScore) {
+    console.log(computerWin);
+    return;
+  }
+
+  else if (computerScore === playerScore)
+          console.log(gameDraw);
+          return;
+}
+
 
 
 
@@ -84,9 +102,10 @@ for(var i=0;i<5;i++){
   console.log(roundResult);
   gameScore(roundResult);
 
+
 }
 
-
+  gameWinner(playerScore, computerScore)
 
 
 
