@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Rock Paper Scissors</title>
+    <script src="scripts/game.js" defer></script>
+    <script src="scripts/app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>Rock Paper Scissors</h1>
+    </header>
+    <main>
+      <div id="score-overlay">
+        <h2>Player Score = <span id="player-score">0</span></h2>
+        <h2>Computer Score = <span id="computer-score">0</span></h2>
+        <h2>Draws = <span id="draw-score">0</span></h2>
+      </div>
+      <section id="active-game">
+        <article id="moves">
+          <p>Your move: <span id="player-move"></span></p>
+          <p>Computer's move: <span id="computer-move"></span></p>
+        </article>
+        <article id="round-winner"></article>
+      </section>
+      <h2><span id="game-winner">...</span></h2>
+      <div id="buttons-overlay">
+        <button class="btn" id="rock-btn">Rock</button>
+        <button class="btn" id="paper-btn">Paper</button>
+        <button class="btn" id="scissors-btn">Scissors</button>
+      </div>
+
+      <article id="game-over">
+        <p>Click "Start New Game" below to play again!</p>
+        <article id="start-again">
+          <button id="start-again-btn">Start New Game</button>
+        </article>
+      </article>
+    </main>
+  </body>
+</html>
