@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(255, 255, 255);
+  color: rgb(26, 26, 26);
+}
+
+#main-header {
+  background-color: rgb(231, 92, 72);
+  color: rgb(255, 249, 242);
+  padding: 1rem 5%;
+  text-align: center;
+}
+
+main {
+  text-align: center;
+}
+
+.btn {
+  font: inherit;
+  padding: 0.5rem;
+  width: 5rem;
+  color: white;
+  background-color: rgb(47, 76, 75);
+  border: 1px solid ;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#moves {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#start-again-btn {
+  margin-top: 1rem;
+  font: inherit;
+  padding: 0.5rem;
+  width: 10rem;
+  background-color: rgb(255, 197, 96);
+  border: 1px solid rgb(143, 143, 143);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#game-winner {
+  color: rgb(97, 187, 182);
+}
+
+#startAgainP {
+  margin-top: 2rem;
+  color: rgb(47, 76, 75);
+  font-size: 17px;
+}
